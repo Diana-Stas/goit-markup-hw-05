@@ -94,6 +94,7 @@ a {
   letter-spacing: 0.03em;
   color: var(--accent-color);
   margin-right: 94px;
+  animation-duration: 1000ms;
 }
 .header-logo-part {
   color: var(--logo-part-color);
@@ -109,13 +110,26 @@ a {
   color: var(--main-text-color);
   padding-top: 32px;
   padding-bottom: 32px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .navigation-link:hover,
 .navigation-link:focus {
   color: var(--accent-color);
 }
 .active {
+  position: relative;
   color: var(--accent-color);
+}
+.active::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  display: inline;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--accent-color);
 }
 .contacts-item:not(:last-child) {
   margin-right: 52px;
@@ -130,6 +144,7 @@ a {
   color: var(--secondary-text-color);
   padding-top: 32px;
   padding-bottom: 32px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-link:hover,
 .header-link:focus {
@@ -138,6 +153,7 @@ a {
 }
 .contacts-icon {
   margin-right: 10px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts {
   display: flex;
@@ -221,6 +237,7 @@ a {
   margin-left: -30px;
 }
 .services-list-item {
+  position: relative;
   margin-left: 30px;
   margin-top: 30px;
   flex-basis: calc(100% / 3 - 30px);
@@ -232,6 +249,19 @@ a {
   text-align: center;
   letter-spacing: 0.03em;
   margin-bottom: 50px;
+}
+.serices-overlay {
+  position: absolute;
+  bottom: 0;
+  padding: 27px 80px;
+  width: 370px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--third-text-color);
+  background: rgba(47, 48, 58, 0.8);
 }
 .team {
   background-color: var(--section-background-color);
@@ -351,6 +381,7 @@ a {
   border-radius: 50%;
   fill: var(--third-text-color);
   background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-social-list-item:not(:last-child) {
   margin-right: 10px;
@@ -381,11 +412,14 @@ a {
   background: var(--section-background-color);
   border-radius: 4px;
   border-style: unset;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-modal-btn:hover,
 .portfolio-modal-btn:focus {
   color: var(--section-background-color);
-  background: var(--accent-color);
+  background-color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .projects-list {
@@ -404,6 +438,7 @@ a {
   margin-left: 30px;
   margin-top: 30px;
   flex-basis: calc(100% / 3 - 30px);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .projects-list-content-wrapper {
   padding: 20px 24px;
@@ -472,6 +507,8 @@ a {
   height: 44px;
   border-radius: 50%;
   fill: var(--icons-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-list-link:hover,
 .social-list-link:focus {
@@ -495,6 +532,8 @@ a {
   fill: var(--icons-color);
   border: 1px solid var(--icons-color);
   border-radius: 4px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-list-link:hover,
 .clients-list-link:focus {
