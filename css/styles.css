@@ -149,11 +149,15 @@ a {
 .header-link:hover,
 .header-link:focus {
   color: var(--accent-color);
+}
+.header-link:hover .contacts-icon,
+.header-link:focus .contacts-icon {
   fill: var(--accent-color);
 }
 .contacts-icon {
   margin-right: 10px;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: var(--secondary-text-color);
 }
 .contacts {
   display: flex;
@@ -303,7 +307,7 @@ a {
 }
 .team-list-content-wrapper {
   text-align: center;
-  padding: 30px 55px;
+  padding: 30px 32px;
 }
 .clients-subtitle {
   font-weight: 700;
@@ -474,7 +478,6 @@ a {
   color: var(--third-text-color);
   background-color: rgba(33, 150, 243, 0.9);
   padding: 63px 24px;
-  overflow: scroll;
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
